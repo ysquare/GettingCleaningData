@@ -33,5 +33,6 @@ names(data_all)[1:length(features_mean_std)] <- as.character(features[features_m
 library(dplyr)
 data_tidy <- data_all %>% group_by(activity,subject) %>% summarize_each(funs(mean))
 
+write.table(data_tidy,"tidy_output.txt",row.names=FALSE)
 
 message("all complete")
