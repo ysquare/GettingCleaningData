@@ -19,7 +19,9 @@ A duplicate of the source data with detailed description can also be found in th
 - **Data**: folder containing all the original data and description from the source.
 
 ## Script task
+
 The script run_analysis.R finishes the following tasks according the project requirements.
+
 1. It loads the test data (X_test, y_test, subject_test) and train data (X_train, y_train, subject_train) and merges them separately into two data frames;
 1. It combines the test data frame and train data frame into a single one
 1. It then keeps the data columns with "mean()" or "std()" in the column names, and removes all the rest;
