@@ -9,7 +9,7 @@ It uses data sets from Human Activity Recognition Using Smartphones Dataset. Det
 Original data set is obtained through the following link:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-A duplicate of the data with detailed description can also be found in the this repo.  See [data/README.txt](https://github.com/ysquare/GettingCleaningData/blob/master/data/README.txt) for more information.
+A duplicate of the source data with detailed description can also be found in this repo.  See [data/README.txt](https://github.com/ysquare/GettingCleaningData/blob/master/data/README.txt) for more information.
 
 ## Files included
 - **README.txt**: This file.
