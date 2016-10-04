@@ -1,117 +1,111 @@
 # Codebook.md
 
+This document describes the exact meanings of the data variables presented in the output file "tidy_output.txt".
+
 ## Feature Selection
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+In the output data file, all time domain signals are denoted with prefix *time* and frequency domain signals *freq*.
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (timeBodyAcc-XYZ and timeGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (timeBodyAccJerk-XYZ and timeBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (timeBodyAccMag, timeGravityAccMag, timeBodyAccJerkMag, timeBodyGyroMag, timeBodyGyroJerkMag).
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
 
 These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.  In the actual data output, '-' was removed and the varables was directly followed by 'X', 'Y', or 'Z'.
 
-* tBodyAcc-XYZ
-* tGravityAcc-XYZ
-* tBodyAccJerk-XYZ
-* tBodyGyro-XYZ
-* tBodyGyroJerk-XYZ
-* tBodyAccMag
-* tGravityAccMag
-* tBodyAccJerkMag
-* tBodyGyroMag
-* tBodyGyroJerkMag
-* fBodyAcc-XYZ
-* fBodyAccJerk-XYZ
-* fBodyGyro-XYZ
-* fBodyAccMag
-* fBodyAccJerkMag
-* fBodyGyroMag
-* fBodyGyroJerkMag
+* timeBodyAcc-XYZ
+* timeGravityAcc-XYZ
+* timeBodyAccJerk-XYZ
+* timeBodyGyro-XYZ
+* timeBodyGyroJerk-XYZ
+* timeBodyAccMag
+* timeGravityAccMag
+* timeBodyAccJerkMag
+* timeBodyGyroMag
+* timeBodyGyroJerkMag
+* freqBodyAcc-XYZ
+* freqBodyAccJerk-XYZ
+* freqBodyGyro-XYZ
+* freqBodyAccMag
+* freqBodyAccJerkMag
+* freqBodyGyroMag
+* freqBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are:
 
 * mean(): Mean value
 * std(): Standard deviation
 
+## Variables
+A complete list of variables is listed below.
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-* gravityMean
-* tBodyAccMean
-* tBodyAccJerkMean
-* tBodyGyroMean
-* tBodyGyroJerkMean
-
-The complete list of variables of each feature vector is available in 'features.txt'
-
-## List of variables
-
-1. activity
 1. subject
-1. tBodyAcc-mean()-X
-1. tBodyAcc-mean()-Y
-1. tBodyAcc-mean()-Z
-1. tBodyAcc-std()-X
-1. tBodyAcc-std()-Y
-1. tBodyAcc-std()-Z
-1. tGravityAcc-mean()-X
-1. tGravityAcc-mean()-Y
-1. tGravityAcc-mean()-Z
-1. tGravityAcc-std()-X
-1. tGravityAcc-std()-Y
-1. tGravityAcc-std()-Z
-1. tBodyAccJerk-mean()-X
-1. tBodyAccJerk-mean()-Y
-1. tBodyAccJerk-mean()-Z
-1. tBodyAccJerk-std()-X
-1. tBodyAccJerk-std()-Y
-1. tBodyAccJerk-std()-Z
-1. tBodyGyro-mean()-X
-1. tBodyGyro-mean()-Y
-1. tBodyGyro-mean()-Z
-1. tBodyGyro-std()-X
-1. tBodyGyro-std()-Y
-1. tBodyGyro-std()-Z
-1. tBodyGyroJerk-mean()-X
-1. tBodyGyroJerk-mean()-Y
-1. tBodyGyroJerk-mean()-Z
-1. tBodyGyroJerk-std()-X
-1. tBodyGyroJerk-std()-Y
-1. tBodyGyroJerk-std()-Z
-1. tBodyAccMag-mean()
-1. tBodyAccMag-std()
-1. tGravityAccMag-mean()
-1. tGravityAccMag-std()
-1. tBodyAccJerkMag-mean()
-1. tBodyAccJerkMag-std()
-1. tBodyGyroMag-mean()
-1. tBodyGyroMag-std()
-1. tBodyGyroJerkMag-mean()
-1. tBodyGyroJerkMag-std()
-1. fBodyAcc-mean()-X
-1. fBodyAcc-mean()-Y
-1. fBodyAcc-mean()-Z
-1. fBodyAcc-std()-X
-1. fBodyAcc-std()-Y
-1. fBodyAcc-std()-Z
-1. fBodyAccJerk-mean()-X
-1. fBodyAccJerk-mean()-Y
-1. fBodyAccJerk-mean()-Z
-1. fBodyAccJerk-std()-X
-1. fBodyAccJerk-std()-Y
-1. fBodyAccJerk-std()-Z
-1. fBodyGyro-mean()-X
-1. fBodyGyro-mean()-Y
-1. fBodyGyro-mean()-Z
-1. fBodyGyro-std()-X
-1. fBodyGyro-std()-Y
-1. fBodyGyro-std()-Z
-1. fBodyAccMag-mean()
-1. fBodyAccMag-std()
-1. fBodyBodyAccJerkMag-mean()
-1. fBodyBodyAccJerkMag-std()
-1. fBodyBodyGyroMag-mean()
-1. fBodyBodyGyroMag-std()
-1. fBodyBodyGyroJerkMag-mean()
-1. fBodyBodyGyroJerkMag-std()
+1. activity
+1. timeBodyAccMeanX
+1. timeBodyAccMeanY
+1. timeBodyAccMeanZ
+1. timeBodyAccStdX
+1. timeBodyAccStdY
+1. timeBodyAccStdZ
+1. timeGravityAccMeanX
+1. timeGravityAccMeanY
+1. timeGravityAccMeanZ
+1. timeGravityAccStdX
+1. timeGravityAccStdY
+1. timeGravityAccStdZ
+1. timeBodyAccJerkMeanX
+1. timeBodyAccJerkMeanY
+1. timeBodyAccJerkMeanZ
+1. timeBodyAccJerkStdX
+1. timeBodyAccJerkStdY
+1. timeBodyAccJerkStdZ
+1. timeBodyGyroMeanX
+1. timeBodyGyroMeanY
+1. timeBodyGyroMeanZ
+1. timeBodyGyroStdX
+1. timeBodyGyroStdY
+1. timeBodyGyroStdZ
+1. timeBodyGyroJerkMeanX
+1. timeBodyGyroJerkMeanY
+1. timeBodyGyroJerkMeanZ
+1. timeBodyGyroJerkStdX
+1. timeBodyGyroJerkStdY
+1. timeBodyGyroJerkStdZ
+1. timeBodyAccMagMean
+1. timeBodyAccMagStd
+1. timeGravityAccMagMean
+1. timeGravityAccMagStd
+1. timeBodyAccJerkMagMean
+1. timeBodyAccJerkMagStd
+1. timeBodyGyroMagMean
+1. timeBodyGyroMagStd
+1. timeBodyGyroJerkMagMean
+1. timeBodyGyroJerkMagStd
+1. freqBodyAccMeanX
+1. freqBodyAccMeanY
+1. freqBodyAccMeanZ
+1. freqBodyAccStdX
+1. freqBodyAccStdY
+1. freqBodyAccStdZ
+1. freqBodyAccJerkMeanX
+1. freqBodyAccJerkMeanY
+1. freqBodyAccJerkMeanZ
+1. freqBodyAccJerkStdX
+1. freqBodyAccJerkStdY
+1. freqBodyAccJerkStdZ
+1. freqBodyGyroMeanX
+1. freqBodyGyroMeanY
+1. freqBodyGyroMeanZ
+1. freqBodyGyroStdX
+1. freqBodyGyroStdY
+1. freqBodyGyroStdZ
+1. freqBodyAccMagMean
+1. freqBodyAccMagStd
+1. freqBodyBodyAccJerkMagMean
+1. freqBodyBodyAccJerkMagStd
+1. freqBodyBodyGyroMagMean
+1. freqBodyBodyGyroMagStd
+1. freqBodyBodyGyroJerkMagMean
+1. freqBodyBodyGyroJerkMagStd

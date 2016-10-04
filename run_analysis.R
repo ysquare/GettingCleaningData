@@ -26,13 +26,15 @@ data_all$activity <- cut(data_all$activity, breaks=6, labels=activity_labels)
 
 # 4. Appropriately labels the data set with descriptive variable names.
 names(data_all)[1:length(features_mean_std)] <- as.character(features[features_mean_std])
-#names(data_all) <- sub("^t(.*)","time\\-\\1",names(data_all))
-#names(data_all) <- sub("^f(.*)","frequency\\-\\1",names(data_all))
+names(data_all) <- sub("\\-(mean)\\(\\)\\-?","Mean",names(data_all))
+names(data_all) <- sub("\\-(std)\\(\\)\\-?","Std",names(data_all))
+names(data_all) <- sub("^t(.*)","time\\1",names(data_all))
+names(data_all) <- sub("^f(.*)","freq\\1",names(data_all))
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 library(dplyr)
-data_tidy <- data_all %>% group_by(activity,subject) %>% summarize_each(funs(mean))
+data_tidy <- data_all %>% group_by(subject,activity) %>% summarize_each(funs(mean))
 
-write.table(data_tidy,"tidy_output.txt",row.names=FALSE)
+write.table(data_tidy,"tidy_output.txt",row.names=FALSE,quote=FALSE)
 
 message("all complete")
